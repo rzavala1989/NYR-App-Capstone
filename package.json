@@ -1,0 +1,26 @@
+{
+  "name": "nyr",
+  "version": "1.0.0",
+  "description": "App to make life changes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ricardo Zavala",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.11.12",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rzavala1989/NYR-App.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rzavala1989/NYR-App/issues"
+  },
+  "homepage": "https://github.com/rzavala1989/NYR-App#readme"
+}
