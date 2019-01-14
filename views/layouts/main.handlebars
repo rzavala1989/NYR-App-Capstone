@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>New Years Resolutions</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    {{> _navbar}}
+    <main role="main">
+      <fieldset>
+        <div class="container">
+            {{> _errors}}
+            <img class="logo" src="/css/images/logo.png">
+            {{{body}}}
+        </div>
+      </fieldset>
+    </main>
+    
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  </body>
+
+</html>
