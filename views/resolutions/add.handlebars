@@ -1,0 +1,14 @@
+<h2>Add Resolution</h2>
+<form action="/resolutions" method="post">
+    <label for="title">Title</label>
+    <input type="text" name="title">
+    <label for="body">Description</label>
+    <textarea name="body"></textarea>
+    <label for="status">As of today, have you met your goal?</label>    
+    <select name="status">
+        <option value="complete">Completed</option>
+        <option value="incomplete" selected>Not Yet Completed</option>
+    </select>
+    <input type="submit" value="Save" class="btn btn-success">
+
+</form>

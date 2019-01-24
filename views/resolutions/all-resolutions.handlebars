@@ -1,0 +1,25 @@
+<h2>Your Resolutions Go Here...</h2>
+<div class="row">
+  {{#each resolutions}}
+  <div class="column">
+    <div class="card">
+      <section class="card-content">
+        <a class='edit-btn' href="/resolutions/edit/{{id}}">
+          <h6>Edit</h6>
+        </a>
+        <h5>{{title}}</h5>
+        <p><div class="story-text">{{{truncate body 140}}}</div></p>
+        <br>
+        <div class="chip">
+          {{name}}
+        </div>
+        <div class="btn btn-read-more">
+          <a href="/resolutions/show/{{id}}">Read More</a>
+        </div>
+      </section>
+    </div>
+  </div>
+  {{else}}
+  <p>No resolutions found. Why not?</p>
+  {{/each}}
+</div>

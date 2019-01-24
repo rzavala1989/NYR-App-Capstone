@@ -1,0 +1,20 @@
+<h3>Register an Account</h3>
+<form method="post" action="/users/register">
+        <div class="login-form">
+          <label for="name">Name</label>
+          <input type="text" name="name" value="{{name}}" required>
+        </div>
+        <div class="login-form">
+          <label for="email">Email</label>
+          <input type="email" name="email" value="{{email}}" required>
+        </div>
+        <div class="login-form">
+          <label for="password">Password</label>
+          <input type="password" name="password" value="{{password}}" required>
+        </div>
+        <div class="login-form">
+          <label for="password2">Confirm Password</label>
+          <input type="password" name="password2" value="{{password2}}" required>
+        </div>
+        <button type="submit" class="btn login-btn">Sign Up</button>
+      </form>

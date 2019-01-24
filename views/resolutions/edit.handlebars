@@ -1,0 +1,19 @@
+<h1>Edit Story</h1>
+
+
+<form action="/resolutions/{{resolution.id}}?_method=PUT" method="post">
+    <input type="hidden" name="_method" value="PUT  ">
+    <label for="title">Edit Title</label>
+    <input type="text" name="title" value="{{resolution.title}}">
+    <label for="body">Edit Description</label>
+    <textarea name="body">{{resolution.body}}</textarea>
+    <label for="status">As of today, have you met your goal?</label>    
+    <select name="status">
+        {{#select resolution.status}}
+        <option value="complete">Completed</option>
+        <option value="incomplete">Not Yet Completed</option>
+        {{/select}}
+    </select>
+    <input type="submit" value="Save" class="btn btn-success">
+
+</form>

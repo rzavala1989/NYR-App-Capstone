@@ -11,6 +11,7 @@
     <main role="main">
       <fieldset>
         <div class="container">
+            {{> _msg}}
             {{> _errors}}
             <img class="logo" src="/css/images/logo.png">
             {{{body}}}
@@ -22,6 +23,12 @@
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
+    <script>
+      CKEDITOR.replace('body', {
+        plugins:'wysiwygarea,toolbar,basicstyles,link'
+      });
+    </script>
   </body>
 
 </html>

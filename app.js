@@ -7,16 +7,20 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const passport = require('passport');
 const exphbs  = require('express-handlebars');
+const flash = require('connect-flash');
 
 
 const app = express();
 
 //Loading user and resolutions routes
 const users = require('./routes/users');
+const resolutions = require('./routes/resolutions');
 
 
 //DB Config
 const db = require('./config/database');
+//Passport Config
+require('./config/passport')(passport);
 
 mongoose.Promise = global.Promise;
 
@@ -26,16 +30,35 @@ mongoose.connect(db.mongoURI, {
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
+//Load Resolutions Model
+require("./models/Resolution");
+const Resolution = mongoose.model('resolutions');
+
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(flash());
+
+// Handlebars Helpers
+const {
+  truncate, 
+  stripTags,
+  formatDate,
+  select
+} = require('./helpers/hbs');
+
 
 // Handlebars Middleware
 app.engine('handlebars', exphbs({
+  helpers: {
+    truncate: truncate,
+    stripTags: stripTags,
+    formatDate: formatDate,
+    select: select
+  },
   defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
-
 
 
 // Static folder
@@ -54,6 +77,15 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Global variables
+app.use(function(req, res, next){
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  res.locals.user = req.user || null;
+  next();
+});
+
 // Index Route
 app.get('/', (req, res) => {
   const title = ' Welcome to the New Year...';
@@ -70,6 +102,7 @@ app.get('/', (req, res) => {
 //
 //Use routes
 app.use('/users', users);
+app.use('/resolutions', resolutions);
 
 const port = 5000;
 

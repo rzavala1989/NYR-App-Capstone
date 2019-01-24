@@ -1,7 +1,13 @@
 <nav role="navigation" class="topnav">
       <div class="topnav__home">
-        <a class="active" href="#home"><img class="logo-banner" src="/css/images/logo_transparent.png"></a>
+        <a class="active" href="/"><img class="logo-banner" src="/css/images/logo_transparent.png"></a>
       </div>
-        <a  class="login-signup" href="#news">Sign Up</a>
-        <a  class="login-signup" href="#contact">Login</a>
+      {{#if user}}
+        <a class="login-signup" href="/resolutions">Resolutions</a>
+        <a class="login-signup" href="/resolutions/add">Add Resolution</a>
+        <a class="login-signup" href="/users/logout">Logout</a>
+       {{else}} 
+        <a class="login-signup" href="/users/register">Sign Up</a>
+        <a class="login-signup" href="/users/login">Login</a>
+       {{/if}}
 </nav>
