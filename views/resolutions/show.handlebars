@@ -7,5 +7,24 @@
                 <p class="resolution-body">{{resolution.body}}</p>
             </div>
         </div>
+        <div class="comment">
+            <div class="card-content">
+                <span class="updates-title">Updates</span>
+                    <form method="post" action="/resolutions/update/{{resolution.id}}">
+                        <textarea name="updateBody"></textarea>
+                        <label>Post an update on your resolution</label>
+                        <input type="submit" value="Submit Update" class="btn btn-success">
+                    </form>
+            </div>
+        </div>
+        {{#each resolution.updates}}
+            <div class="comment">
+                <div class="card-content">
+                    <h4>{{formatDate updateDate 'MMMM Do YYYY'}}</h6>
+                    <p>{{updateBody}}</p>
+                    
+                </div>
+            </div>
+        {{/each}}
     </div>
 </div>

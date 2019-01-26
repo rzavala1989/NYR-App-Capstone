@@ -100,7 +100,7 @@ router.put('/:id', (req, res) => {
       // new values
       resolution.title = req.body.title;
       resolution.body = req.body.body;
-      resolution.motivation = req.body.motivation;
+      resolution.status = req.body.status;
   
       resolution.save()
         .then(resolution => {
@@ -111,11 +111,31 @@ router.put('/:id', (req, res) => {
   });
 
   router.delete('/:id', (req, res) => {
-    Idea.remove({_id: req.params.id})
+    Resolution.remove({_id: req.params.id})
       .then(() => {
         req.flash('success_msg', 'Resolution has been removed');
         res.redirect('/resolutions');
       });
   });
 
+  //Add updates
+
+  router.post('/update/:id', (req, res) =>{
+    Resolution.findOne({
+      _id: req.params.id
+    })
+    .then(resolution =>{
+      console.log(req.body);
+      const newUpdate = {
+        updateBody: req.body.updateBody,
+        updateDate: req.body.updateDate
+      }
+      //Add to updates array
+      resolution.updates.unshift(newUpdate);
+      resolution.save()
+        .then(resolution =>{
+          res.redirect(`/resolutions/show/${resolution.id}`)
+        });
+    });
+  });
 module.exports = router;

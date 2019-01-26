@@ -15,18 +15,14 @@ const ResolutionSchema = new Schema({
         type: String,
         default:'incomplete'
     },
-    comments: [{
-        commentBody: {
+    updates: [{
+        updateBody: {
           type: String,
           required: true
         },
-        commentDate:{
+        updateDate:{
           type: Date,
           default: Date.now
-        },
-        commentUser:{
-          type: Schema.Types.ObjectId,
-          ref:'users'
         }
       }],
       user:{
@@ -42,7 +38,12 @@ const ResolutionSchema = new Schema({
       }
 });
 
-mongoose.model('resolutions', ResolutionSchema);
+const Resolution = mongoose.model('resolutions', ResolutionSchema);
+
+
+//for testing purposes
+
+module.exports = {Resolution}
 
 //title
 //email.id for user that created it

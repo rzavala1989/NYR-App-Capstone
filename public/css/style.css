@@ -229,6 +229,19 @@ html {
     margin-left:2%;
     margin-right: 2%;
     margin-bottom:4%;
+    height: 250px;
+    
+  }
+
+  .comment {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color: rgba(65, 63, 63, 0.767);
+    margin-left:2%;
+    margin-right: 2%;
+    margin-bottom:4%;
+    width: 60%;
   }
   
   /* On mouse-over, add a deeper shadow */
@@ -245,6 +258,13 @@ html {
     padding:10px;
     color: white;
     text-align: center;
+  }
+
+  .card-content-2{
+    position: relative;
+    padding:13px;
+    color: white;
+    text-align: left;
   }
 
   /*Chip for author */

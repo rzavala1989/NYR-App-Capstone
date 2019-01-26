@@ -2,7 +2,7 @@
 
 
 <form action="/resolutions/{{resolution.id}}?_method=PUT" method="post">
-    <input type="hidden" name="_method" value="PUT  ">
+    <input type="hidden" name="_method" value="PUT">
     <label for="title">Edit Title</label>
     <input type="text" name="title" value="{{resolution.title}}">
     <label for="body">Edit Description</label>
@@ -15,5 +15,4 @@
         {{/select}}
     </select>
     <input type="submit" value="Save" class="btn btn-success">
-
 </form>
