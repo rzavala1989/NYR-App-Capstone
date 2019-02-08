@@ -1,5 +1,5 @@
 <h3>Account Login</h3>
-<form method="post" action="/users/login">
+<form class="edit-form" method="post" action="/users/login">
         <div class="login-form">
           <label for="email">Email</label>
           <input type="email" name="email" class="form-control" required>
@@ -10,4 +10,6 @@
         </div>
         <button type="submit" class="btn login-btn">Log In</button>
       </form>
-      <p>Don't have an account? <a href="/users/register">Sign Up</a></p>
+     <form method="get" action="/users/register">
+        <button type="submit" class="btn btn-register">Sign up</button>
+     </form>

@@ -9,8 +9,12 @@ const passport = require('passport');
 const exphbs  = require('express-handlebars');
 const flash = require('connect-flash');
 
+const {mongoURI, PORT} = require('./config/database');
+
 
 const app = express();
+app.use(express.json());
+
 
 //Loading user and resolutions routes
 const users = require('./routes/users');
@@ -104,8 +108,23 @@ app.get('/', (req, res) => {
 app.use('/users', users);
 app.use('/resolutions', resolutions);
 
-const port = 8080;
+// const port = 8080;
 
-app.listen(port, () =>{
-  console.log(`Server started on port ${port}`);
-});
+// app.listen(port, () =>{
+//   console.log(`Server started on port ${port}`);
+// });
+
+
+
+if (require.main === module) {
+  // Connect to DB and Listen for incoming connections
+  mongoose.createConnection(mongoURI);
+
+  app.listen(PORT, function () {
+    console.info(`Server listening on ${this.address().port}`);
+  }).on('error', err => {
+    console.error(err);
+  });
+}
+
+module.exports = {app};

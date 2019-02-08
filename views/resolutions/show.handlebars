@@ -1,17 +1,19 @@
 <div class="row">
     <div class="col-md-9">
-        <h2>{{resolution.title}}</h2>
+        <h3><u>{{formatDate resolution.date 'MMMM Do YYYY'}}</u></h3>
+        
         <div class="card">
             <div class="card-content">
-                <h3>{{formatDate resolution.date 'MMMM Do YYYY'}}</h3>
-                <p class="resolution-body">{{resolution.body}}</p>
+                <h2>{{resolution.title}}</h2>
+                <hr>
+                <p class="resolution-body">{{stripTags resolution.body}}</p>
             </div>
         </div>
         <div class="comment">
             <div class="card-content">
-                <span class="updates-title">Updates</span>
+                <section class="updates-title">Updates</section>
                     <form method="post" action="/resolutions/update/{{resolution.id}}">
-                        <textarea name="updateBody"></textarea>
+                        <textarea name="updateBody" class="update-body"></textarea>
                         <label>Post an update on your resolution</label>
                         <input type="submit" value="Submit Update" class="btn btn-success">
                     </form>
@@ -21,6 +23,7 @@
             <div class="comment">
                 <div class="card-content">
                     <h4>{{formatDate updateDate 'MMMM Do YYYY'}}</h6>
+                    <hr>
                     <p>{{updateBody}}</p>
                     
                 </div>

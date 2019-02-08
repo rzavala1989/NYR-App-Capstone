@@ -11,7 +11,7 @@ const Resolution = mongoose.model('resolutions');
 require('../models/User');
 const User = mongoose.model('users');
 
-router.get('/', (req, res) => {
+router.get('/', ensureAuthenticated, (req, res) => {
     Resolution.find()
     // .populate(users)
       .then(resolutions => {
@@ -21,11 +21,11 @@ router.get('/', (req, res) => {
       });
 });
 
-router.get('/add', (req, res) =>{
+router.get('/add', ensureAuthenticated, (req, res) =>{
     res.render('resolutions/add');
 });
 
-router.get('/edit/:id', (req, res) =>{
+router.get('/edit/:id', ensureAuthenticated, (req, res) =>{
     Resolution.findOne({
         _id: req.params.id
     })
@@ -37,7 +37,7 @@ router.get('/edit/:id', (req, res) =>{
 });
 
 //SHow single resolution
-router.get('/show/:id', (req, res) =>{
+router.get('/show/:id', ensureAuthenticated, (req, res) =>{
   Resolution.findOne({
     _id: req.params.id
   })
@@ -49,7 +49,7 @@ router.get('/show/:id', (req, res) =>{
 });
 
 //Edit story form
-router.get('/edit /:id', (req, res) =>{
+router.get('/edit /:id', ensureAuthenticated, (req, res) =>{
   Resolution.findOne({
     _id: req.params.id
   })
@@ -61,7 +61,7 @@ router.get('/edit /:id', (req, res) =>{
 });
  
 
-router.post('/', (req, res) => {
+router.post('/', ensureAuthenticated, (req, res) => {
     let errors = [];
   
     if(!req.body.title){
@@ -92,7 +92,7 @@ router.post('/', (req, res) => {
     }
   });
   // Edit Form process
-router.put('/:id', (req, res) => {
+router.put('/:id', ensureAuthenticated, (req, res) => {
     Resolution.findOne({
       _id: req.params.id
     })
@@ -120,7 +120,7 @@ router.put('/:id', (req, res) => {
 
   //Add updates
 
-  router.post('/update/:id', (req, res) =>{
+  router.post('/update/:id', ensureAuthenticated, (req, res) =>{
     Resolution.findOne({
       _id: req.params.id
     })

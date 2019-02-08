@@ -4,9 +4,7 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const router = express.Router();
 
-//TODOS
-//1. jtwauthtoken
-//2. localStrategy
+
 
 //bring in User model
 require('../models/User');
