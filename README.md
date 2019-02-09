@@ -14,3 +14,14 @@ Description: We all pledge to make changes for the better everytime a new year r
 </ul>
 
 ## Screenshots
+
+Why not sign up for an account?
+<a href="http://www.freeimagehosting.net/commercial-photography/"><img src="https://i.imgur.com/m4LRVzH.png" alt="Commercial Photography"></a>
+
+Now, let's log in:
+
+<a href="http://www.freeimagehosting.net/commercial-photography/"><img src="https://i.imgur.com/pYySxRN.jpg" alt="Commercial Photography"></a>
+
+The dashboard, which will display all resolutions from all users
+
+<a href="http://www.freeimagehosting.net/commercial-photography/"><img src="https://i.imgur.com/VqgKizj.png" alt="Commercial Photography"></a>
