@@ -16,6 +16,7 @@ Description: We all pledge to make changes for the better everytime a new year r
 ## Screenshots
 
 Why not sign up for an account?
+
 <a href="http://www.freeimagehosting.net/commercial-photography/"><img src="https://i.imgur.com/m4LRVzH.png" alt="Commercial Photography"></a>
 
 Now, let's log in:
@@ -25,3 +26,17 @@ Now, let's log in:
 The dashboard, which will display all resolutions from all users
 
 <a href="http://www.freeimagehosting.net/commercial-photography/"><img src="https://i.imgur.com/VqgKizj.png" alt="Commercial Photography"></a>
+
+The show page, top portion:
+
+<a href="http://www.freeimagehosting.net/commercial-photography/"><img src="https://i.imgur.com/w1MRKub.png" alt="Commercial Photography"></a>
+
+Show page: bottom portion which contains the updates and comments from other users: 
+
+<a href="http://www.freeimagehosting.net/commercial-photography/"><img src="https://i.imgur.com/VVntQEV.png" alt="Commercial Photography"></a>
+
+Flash messaging on display, show us that our delete function works, and that we cannot edit another user's work:
+
+<a href="http://www.freeimagehosting.net/commercial-photography/"><img src="https://i.imgur.com/Vo45JUg.png" alt="Commercial Photography"></a>
+
+<a href="http://www.freeimagehosting.net/commercial-photography/"><img src="https://i.imgur.com/SwEn6Y9.png" alt="Commercial Photography"></a>
