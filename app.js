@@ -9,7 +9,7 @@ const passport = require('passport');
 const exphbs  = require('express-handlebars');
 const flash = require('connect-flash');
 
-const {mongoURI, PORT} = require('./config/database');
+const {mongoURI} = require('./config/database');
 
 
 const app = express();
@@ -122,7 +122,7 @@ if (require.main === module) {
   // Connect to DB and Listen for incoming connections
   mongoose.connect(mongoURI, { useMongoClient: true });
 
-  app.listen(PORT, function () {
+  app.listen(process.env.PORT || 3000, function () {
     console.info(`Server listening on ${this.address().port}`);
   }).on('error', err => {
     console.error(err);
