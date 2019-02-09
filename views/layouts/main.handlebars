@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width">
     <title>New Years Resolutions</title>
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
+
   </head>
   <body>
     {{> _navbar}}
     <main role="main">
       <fieldset>
-        <div class="container">
+        <div role="banner" class="container">
             {{> _msg}}
             {{> _errors}}
             <img class="logo" src="/css/images/logo.png">
@@ -26,6 +28,9 @@
     <script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
     <script>
       CKEDITOR.replace('body', {
+        plugins:'wysiwygarea,toolbar,basicstyles,link'
+      });
+      CKEDITOR.replace('updateBody', {
         plugins:'wysiwygarea,toolbar,basicstyles,link'
       });
     </script>

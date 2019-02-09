@@ -20,5 +20,16 @@ module.exports = {
     select: function(selected, options) {
         return options.fn(this).replace( new RegExp(' value=\"' + selected + '\"'), '$& selected="selected"').replace( new RegExp('>' + selected + '</option>'),
         'selected="selected"$&');
+    },
+    editLink: function(resolutionUser, loggedUser, storyId, floating = true){
+        if(resolutionUser == loggedUser){
+            if(floating) {
+                return ` <a class='edit-btn' href="/resolutions/edit/${storyId}">
+                <h6>Edit</h6>
+              </a>`
+            }else{
+                return ``;
+            }
+        }
     }
 }

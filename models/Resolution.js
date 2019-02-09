@@ -20,6 +20,10 @@ const ResolutionSchema = new Schema({
           type: String,
           required: true
         },
+        updateUser: {
+            type: Schema.Types.ObjectId,
+            ref: 'users'
+        },
         updateDate:{
           type: Date,
           default: Date.now

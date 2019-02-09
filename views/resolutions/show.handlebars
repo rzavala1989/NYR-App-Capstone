@@ -6,28 +6,28 @@
             <div class="card-content">
                 <h2>{{resolution.title}}</h2>
                 <hr>
-                <p class="resolution-body">{{stripTags resolution.body}}</p>
+                <p class="resolution-body" id="resolution-text">This Resolution: {{stripTags resolution.body}}</p>
             </div>
         </div>
-        <div class="comment">
-            <div class="card-content">
-                <section class="updates-title">Updates</section>
+        <section class="comment">
+            <div class="card-content2">
+                <section class="updates-title title-updates">Updates</section>
                     <form method="post" action="/resolutions/update/{{resolution.id}}">
                         <textarea name="updateBody" class="update-body"></textarea>
                         <label>Post an update on your resolution</label>
                         <input type="submit" value="Submit Update" class="btn btn-success">
                     </form>
             </div>
-        </div>
+        </section>
         {{#each resolution.updates}}
-            <div class="comment">
-                <div class="card-content">
+            <section role="listitem" class="comment">
+                <div class="card-content2">
                     <h4>{{formatDate updateDate 'MMMM Do YYYY'}}</h6>
                     <hr>
-                    <p>{{updateBody}}</p>
+                    <p><span class="updateUser">{{updateUser.name}}</span>: {{updateBody}}</p>
                     
                 </div>
-            </div>
+            </section>
         {{/each}}
     </div>
 </div>

@@ -13,7 +13,8 @@ const User = mongoose.model('users');
 
 router.get('/', ensureAuthenticated, (req, res) => {
     Resolution.find()
-    // .populate(users)
+      .populate('users')
+      .sort({date: 'desc'})
       .then(resolutions => {
         res.render('resolutions/all-resolutions', {
           resolutions:resolutions
@@ -30,9 +31,14 @@ router.get('/edit/:id', ensureAuthenticated, (req, res) =>{
         _id: req.params.id
     })
     .then(resolution => {
-        res.render('resolutions/edit', {
+        if(resolution.user != req.user.id) {
+          req.flash('error_msg', "You can't edit another user's resolution");
+          res.redirect("/resolutions")
+        } else {
+          res.render('resolutions/edit', {
             resolution: resolution
-        });
+         });
+        }
     });
 });
 
@@ -41,6 +47,8 @@ router.get('/show/:id', ensureAuthenticated, (req, res) =>{
   Resolution.findOne({
     _id: req.params.id
   })
+  .populate('user')
+  .populate('updates.updateUser')
   .then(resolution => {
     res.render('resolutions/show', {
       resolution: resolution
@@ -128,7 +136,8 @@ router.put('/:id', ensureAuthenticated, (req, res) => {
       console.log(req.body);
       const newUpdate = {
         updateBody: req.body.updateBody,
-        updateDate: req.body.updateDate
+        updateDate: req.body.updateDate,
+        updateUser: req.user.id
       }
       //Add to updates array
       resolution.updates.unshift(newUpdate);

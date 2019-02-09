@@ -77,7 +77,7 @@ html {
 
   
 
-  label{
+  label, input[type='text']{
     margin-left:auto;
     margin-right: auto;
   }
@@ -258,13 +258,14 @@ html {
 
   .card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
     transition: 0.3s;
     background-color: rgba(211, 9, 9, 0.767);
     margin-left:2%;
     margin-right: 2%;
     margin-bottom:4%;
-    height: 250px;
+    height: 300px;
+    border-radius: 5px;
     
   }
 
@@ -281,7 +282,7 @@ html {
   
   /* On mouse-over, add a deeper shadow */
   .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7);
   }
   
   /* Add some padding inside the card container */
@@ -295,7 +296,7 @@ html {
     text-align: center;
   }
 
-  .card-content-2{
+  .card-content2{
     position: relative;
     padding:13px;
     color: white;
@@ -329,6 +330,8 @@ html {
 
   h5{
     margin-top: 45px;
+    font-weight: 400;
+    font-size:110%;
   }
 
   @media (max-width: 1035px) {
@@ -350,7 +353,7 @@ html {
   }
 
   p.resolution-body{
-    font-style: italic;
+    font-weight:200;
   }
 
   .login-form {
@@ -367,7 +370,7 @@ html {
   }
 
   .story-text{
-    font-size: 10px;
+    font-size: 11px;
   }
 
   #delete-btn{
@@ -406,3 +409,16 @@ html {
     float: left;
     padding: 0;
   }
+
+  .tagline {
+    text-align: center;
+  }
+
+ .updates-title.title-updates{
+   text-align: center;
+ }
+
+ .updateUser, .resolutionUser{
+   font-family: "Niconne"; 
+   font-size: 150%;
+ }
