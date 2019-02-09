@@ -120,7 +120,7 @@ app.use('/resolutions', resolutions);
 
 if (require.main === module) {
   // Connect to DB and Listen for incoming connections
-  mongoose.createConnection(mongoURI);
+  mongoose.connect(mongoURI, { useMongoClient: true });
 
   app.listen(PORT, function () {
     console.info(`Server listening on ${this.address().port}`);
