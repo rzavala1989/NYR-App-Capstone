@@ -15,7 +15,7 @@
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "connect-flash": "^0.1.1",
-    "express": "^4.15.4",
+    "express": "^4.17.3",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
     "faker": "^4.1.0",
